@@ -1,0 +1,206 @@
+{
+  "main": {
+    "id": "6ec8e3eee1259556",
+    "type": "split",
+    "children": [
+      {
+        "id": "40fc9158e28e9daf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ac3f1470aa9fca90",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AtheNAC 架構/NetListener.cs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "NetListener.cs"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "50f581e84cb0cec3",
+    "type": "split",
+    "children": [
+      {
+        "id": "ad127c78f49e4cac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "69e3f0b13bd2e1f1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "檔案瀏覽器"
+            }
+          },
+          {
+            "id": "87a3c3786a8c38d5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0e4906c30265b16e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "書籤"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 276.5
+  },
+  "right": {
+    "id": "5dde51009ebbae2c",
+    "type": "split",
+    "children": [
+      {
+        "id": "d104bb17b5f3248e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "42bb70d6e05f9119",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "前端應用/EntryComponent.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for EntryComponent"
+            }
+          },
+          {
+            "id": "f6c7abcfa9416342",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "前端應用/EntryComponent.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from EntryComponent"
+            }
+          },
+          {
+            "id": "56293960bbdc3da3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d88f73285fb3dca6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "AtheNAC 架構/NetListener.cs.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "NetListener.cs 的大綱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false,
+      "terminal:Open terminal": false
+    }
+  },
+  "active": "ac3f1470aa9fca90",
+  "lastOpenFiles": [
+    "AtheNAC 架構/Guest Web.md",
+    "AtheNAC 架構/NetListener.cs.md",
+    "AtheNAC 架構/Npcap.md",
+    "AtheNAC 架構/PIXIS DHCP簡介.md",
+    "AtheNAC 架構/SharpPcap.md",
+    "AtheNAC 架構/WinPcap.md",
+    "EagerSingleton.md",
+    "SMTP.md",
+    "網路相關知識/IP 位址.md",
+    "網路相關知識/MAC 位址.md",
+    "網路相關知識/IP 衝突 (IP Conflict).md",
+    "網路相關知識/ARP and GARP.md",
+    "網路相關知識/ARP 快取表 (ARP Cache).md",
+    "網路相關知識/廣播 (Broadcast).md",
+    "網路相關知識/網路知識大綱.md",
+    "AtheNAC 架構/AtheNAC 架構大綱.md",
+    "AtheNAC 架構/libpcap.md",
+    "AtheNAC 架構/使用者層級的應用程式.md",
+    "ARP and GARP.md",
+    "網路相關知識",
+    "AtheNAC X/全域註冊.md",
+    "AtheNAC X/前端應用/EntryComponent.md",
+    "圖片/Pasted image 20250602165351.png",
+    "Git/Git Rebase.md",
+    "圖片/Pasted image 20250606162156.png",
+    "Git",
+    "圖片/Pasted image 20250606162031.png",
+    "AtheNAC X/未命名",
+    "圖片",
+    "AtheNAC 架構",
+    "AtheNAC X",
+    "Untitled.md",
+    "AtheNAC X/前端應用"
+  ]
+}
