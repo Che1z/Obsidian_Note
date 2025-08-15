@@ -1,0 +1,2 @@
+- border-collapse：設置< table>內的單元格是否具有共享或單獨的邊框，設定collapse為共享意思
+- 若螢幕太小而無法顯示完整內容(表格超出螢幕)。此時可做響應式表格(responsive table)，做法：添加一個帶有overflow-x:auto的容器元素(e.g. div tag)，如此一來表格會出現一個horizontal scrollbar。

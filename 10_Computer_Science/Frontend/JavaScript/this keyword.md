@@ -1,0 +1,1 @@
+- 在method中，this指的是調用該方法的物件。若某個function沒有調用該function的物件，則this指向window物件

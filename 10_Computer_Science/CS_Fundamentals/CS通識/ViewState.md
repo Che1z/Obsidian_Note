@@ -1,0 +1,3 @@
+Viewstate是提供同一網頁多次的Http Request之間的數據儲存問題提供解法
+ViewState在網頁中會以隱藏方式存在，無法直接被觀看到
+

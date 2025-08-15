@@ -1,0 +1,2 @@
+z-index：垂直螢幕的座標數值
+在stacking context相同的情況下，positioned element中較大z-index元素會覆蓋較小z-index的元素。z-index只會套用在positioned element上

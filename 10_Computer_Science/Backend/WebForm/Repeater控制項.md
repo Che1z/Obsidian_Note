@@ -1,0 +1,1 @@
+若不想用`GridView`內建功能，可以使用`Repeater`即可

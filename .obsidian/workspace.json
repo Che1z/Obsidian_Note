@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "40fc9158e28e9daf",
+        "id": "0e9ada972e027bff",
         "type": "tabs",
         "children": [
           {
-            "id": "ac3f1470aa9fca90",
+            "id": "8937ec8977b9413d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git/Git Rebase.md",
-                "mode": "source",
+                "file": "90_Meta/Obsidian/Obsidian/Obsidian 介紹.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Git Rebase"
+              "title": "Obsidian 介紹"
             }
           }
         ]
@@ -140,13 +140,23 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Git/Git Rebase.md",
+                "file": "90_Meta/Obsidian/Obsidian/Obsidian 介紹.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Git Rebase 的大綱"
+              "title": "Obsidian 介紹 的大綱"
+            }
+          },
+          {
+            "id": "243beeea0593c581",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
@@ -167,8 +177,21 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "ac3f1470aa9fca90",
+  "active": "8937ec8977b9413d",
   "lastOpenFiles": [
+    "90_Meta/Obsidian/Obsidian/筆記反向連結.md",
+    "80_Personal/Day_Planners/Day Planners/Day Planner-20250512.md",
+    "90_Meta/Obsidian/Obsidian/Obsidian 介紹.md",
+    "80_Personal/Reading/Reading/書籍 - 最有生產力的一年.md",
+    "80_Personal/Reading/Reading/書籍  - 我可能錯了.md",
+    "80_Personal/Reading/Reading/三重點法則.md",
+    "30_Projects/AtheNAC/AtheNAC 架構/NetListener.cs.md",
+    "30_Projects/AtheNAC/AtheNAC 架構/Guest Web.md",
+    "30_Projects/AtheNAC/AtheNAC 架構/Npcap.md",
+    "30_Projects/AtheNAC/AtheNAC 架構/libpcap.md",
+    "30_Projects/AtheNAC/AtheNAC 架構/使用者層級的應用程式.md",
+    "10_Computer_Science/Backend/ASP.Net Core/Routing.md",
+    "10_Computer_Science/Backend/ASP.Net Core/Environment 環境設定.md",
     "Git/vim.md",
     "Git/Git Rebase.md",
     "AtheNAC 架構/NetListener.cs.md",
@@ -182,17 +205,7 @@
     "網路相關知識/IP 位址.md",
     "網路相關知識/MAC 位址.md",
     "網路相關知識/IP 衝突 (IP Conflict).md",
-    "網路相關知識/ARP and GARP.md",
-    "網路相關知識/ARP 快取表 (ARP Cache).md",
-    "網路相關知識/廣播 (Broadcast).md",
-    "網路相關知識/網路知識大綱.md",
-    "AtheNAC 架構/AtheNAC 架構大綱.md",
-    "AtheNAC 架構/libpcap.md",
-    "AtheNAC 架構/使用者層級的應用程式.md",
-    "ARP and GARP.md",
     "網路相關知識",
-    "AtheNAC X/全域註冊.md",
-    "AtheNAC X/前端應用/EntryComponent.md",
     "圖片/Pasted image 20250602165351.png",
     "圖片/Pasted image 20250606162156.png",
     "Git",
@@ -201,7 +214,6 @@
     "圖片",
     "AtheNAC 架構",
     "AtheNAC X",
-    "Untitled.md",
     "AtheNAC X/前端應用"
   ]
 }
