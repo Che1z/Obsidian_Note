@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90_Meta/Obsidian/Obsidian/Obsidian 介紹.md",
-                "mode": "preview",
+                "file": "10_Computer_Science/Backend/C#/dll.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Obsidian 介紹"
+              "title": "dll"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "90_Meta/Obsidian/Obsidian/Obsidian 介紹.md",
+                "file": "10_Computer_Science/Backend/C#/dll.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Obsidian 介紹 的大綱"
+              "title": "dll 的大綱"
             }
           },
           {
@@ -155,8 +155,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-file",
+              "title": "外掛程式已不復活躍"
             }
           }
         ]
@@ -179,32 +179,36 @@
   },
   "active": "8937ec8977b9413d",
   "lastOpenFiles": [
-    "90_Meta/Obsidian/Obsidian/筆記反向連結.md",
-    "80_Personal/Day_Planners/Day Planners/Day Planner-20250512.md",
-    "90_Meta/Obsidian/Obsidian/Obsidian 介紹.md",
-    "80_Personal/Reading/Reading/書籍 - 最有生產力的一年.md",
-    "80_Personal/Reading/Reading/書籍  - 我可能錯了.md",
-    "80_Personal/Reading/Reading/三重點法則.md",
-    "30_Projects/AtheNAC/AtheNAC 架構/NetListener.cs.md",
-    "30_Projects/AtheNAC/AtheNAC 架構/Guest Web.md",
-    "30_Projects/AtheNAC/AtheNAC 架構/Npcap.md",
-    "30_Projects/AtheNAC/AtheNAC 架構/libpcap.md",
-    "30_Projects/AtheNAC/AtheNAC 架構/使用者層級的應用程式.md",
-    "10_Computer_Science/Backend/ASP.Net Core/Routing.md",
-    "10_Computer_Science/Backend/ASP.Net Core/Environment 環境設定.md",
-    "Git/vim.md",
-    "Git/Git Rebase.md",
-    "AtheNAC 架構/NetListener.cs.md",
-    "AtheNAC 架構/Guest Web.md",
-    "AtheNAC 架構/Npcap.md",
-    "AtheNAC 架構/PIXIS DHCP簡介.md",
-    "AtheNAC 架構/SharpPcap.md",
-    "AtheNAC 架構/WinPcap.md",
-    "EagerSingleton.md",
-    "SMTP.md",
-    "網路相關知識/IP 位址.md",
-    "網路相關知識/MAC 位址.md",
-    "網路相關知識/IP 衝突 (IP Conflict).md",
+    "10_Computer_Science/Backend/C#/Constructor.md",
+    "10_Computer_Science/Backend/C#/dll.md",
+    "10_Computer_Science/Backend/WebForm/CSharp JSON處理.md",
+    "10_Computer_Science/Backend/C#/C Sharp.md",
+    "10_Computer_Science/Backend/後端",
+    "20_Topics/Investing/技術分析與交易心理學.md",
+    "20_Topics/Investing/chp3 市場結構.md",
+    "20_Topics/Investing/chp2 流動性.md",
+    "20_Topics/Investing/chp1 聰明錢.md",
+    "20_Topics/Investing/Q&A.md",
+    "80_Personal/Career/轉職講座.md",
+    "90_Meta/Assets/免費圖片、圖案網頁.md",
+    "80_Personal/Career",
+    "10_Computer_Science/Backend/C#/Error handling.md",
+    "10_Computer_Science/Backend/C#/Exceptions.md",
+    "10_Computer_Science/Backend/C#/Inheritance.md",
+    "10_Computer_Science/Backend/C#/virtual.md",
+    "10_Computer_Science/Backend/C#/物件導向OOP.md",
+    "10_Computer_Science/Backend/C#/泛型 Generic.md",
+    "10_Computer_Science/Backend/C#/variable變數.md",
+    "10_Computer_Science/Backend/C#/using.md",
+    "10_Computer_Science/Backend/C#/String interpolation.md",
+    "10_Computer_Science/Backend/C#/String builder.md",
+    "10_Computer_Science/Backend/C#/static靜態.md",
+    "10_Computer_Science/Backend/C#/method.md",
+    "10_Computer_Science/Backend/C#/Loop.md",
+    "10_Computer_Science/Backend/C#/List.md",
+    "10_Computer_Science/Backend/C#/interface.md",
+    "10_Computer_Science/CS_Fundamentals/DataStructure",
+    "10_Computer_Science/CS_Fundamentals/CS50",
     "網路相關知識",
     "圖片/Pasted image 20250602165351.png",
     "圖片/Pasted image 20250606162156.png",
@@ -213,7 +217,6 @@
     "AtheNAC X/未命名",
     "圖片",
     "AtheNAC 架構",
-    "AtheNAC X",
-    "AtheNAC X/前端應用"
+    "AtheNAC X"
   ]
 }
