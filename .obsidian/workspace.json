@@ -4,21 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "d3708aafa6be1b18",
+        "id": "4ef09d4ba1cbf88c",
         "type": "tabs",
         "children": [
           {
-            "id": "22802d127c0b0ec1",
+            "id": "6d07e84dbb87412c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80_Personal/Reading/讀書現況.md",
+                "file": "80_Personal/Reading/書籍 - 沉思錄.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "讀書現況"
+              "title": "書籍 - 沉思錄"
+            }
+          },
+          {
+            "id": "986ecf136777b55c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "80_Personal/Reading/書籍  - 我可能錯了.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "書籍  - 我可能錯了"
             }
           }
         ]
@@ -140,17 +154,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80_Personal/Reading/讀書現況.md",
+                "file": "80_Personal/Reading/書籍 - 沉思錄.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "讀書現況 的大綱"
+              "title": "書籍 - 沉思錄 的大綱"
             }
           },
           {
-            "id": "1800133f9e81071f",
+            "id": "243beeea0593c581",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -168,7 +182,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:建立新的 base": false,
       "switcher:開啟快速切換": false,
       "graph:查看關聯圖": false,
       "canvas:建立新畫布": false,
@@ -178,57 +191,57 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "22802d127c0b0ec1",
+  "active": "6d07e84dbb87412c",
   "lastOpenFiles": [
     "80_Personal/Reading/書籍 - 最有生產力的一年.md",
-    "80_Personal/Reading/書籍  - 我可能錯了.md",
+    "80_Personal/Reading/書籍 - 沉思錄.md",
     "80_Personal/Reading/讀書現況.md",
-    "80_Personal/Reading/共同問題.md",
+    "80_Personal/Reading/書籍  - 我可能錯了.md",
     "80_Personal/Reading/三重點法則.md",
-    "2025-02-11.md",
     "10_Computer_Science/Software_Engineering/Code_Review/Checklist.md",
+    "2025-02-11.md",
     "10_Computer_Science/Software_Engineering/Code_Review/Code Review 心得.md",
-    "30_Projects/AtheNAC/AtheNAC 架構/Guest Web.md",
-    "目錄.md",
+    "10_Computer_Science/Networking/Wireshark/課程目的.md",
+    "10_Computer_Science/Networking/網路相關知識/IP 位址.md",
+    "10_Computer_Science/CS_Fundamentals/Design pattern/singleton.md",
     "10_Computer_Science/Software_Engineering/Code_Review",
     "10_Computer_Science/Software_Engineering",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143213.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143157.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143146.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143037.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143024.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029134445.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029134434.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029134358.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029134331.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029110638.png",
-    "10_Computer_Science/Backend/C#/物件導向 (OOP)/Abstract keyword.md",
+    "目錄.md",
+    "10_Computer_Science/CS_Fundamentals/EagerSingleton.md",
+    "10_Computer_Science/Networking/Wireshark/DNS TTL.md",
     "物件導向 (OOP).md",
-    "10_Computer_Science/Backend/C#/物件導向 (OOP)/Inheritance.md",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/class.md",
-    "10_Computer_Science/Backend/C#/物件導向 (OOP)/access modifier.md",
-    "10_Computer_Science/Backend/C#/物件導向 (OOP)/Encapsulation(封裝).md",
-    "10_Computer_Science/Backend/C#/物件導向 (OOP)/interface.md",
-    "10_Computer_Science/Backend/C#/物件導向 (OOP)/base keyword.md",
-    "10_Computer_Science/Backend/MVC/Action Result.md",
-    "10_Computer_Science/Backend/MVC/Razor View切換語法.md",
-    "10_Computer_Science/Backend/MVC/MetadataType.md",
-    "10_Computer_Science/Backend/MVC/DataType屬性.md",
-    "10_Computer_Science/Backend/Token/JWT.md",
-    "10_Computer_Science/Backend/DataBase/SQL Practice 0316.md",
-    "10_Computer_Science/Backend/DataBase/Rank, ROW_NUMBER函數.md",
-    "10_Computer_Science/Backend/DataBase/ORDER BY 排序.md",
-    "10_Computer_Science/Backend/C#/語法糖",
+    "90_Meta/Self-Learning/自學.md",
     "90_Meta/Self-Learning",
-    "90_Meta/Scratchpad/未命名.canvas",
     "90_Meta/Scratchpad/未命名 3.canvas",
     "90_Meta/Scratchpad/未命名 2.canvas",
+    "90_Meta/Scratchpad/未命名.canvas",
     "90_Meta/Scratchpad/未命名 1.canvas",
     "90_Meta/Scratchpad",
-    "90_Meta/Obsidian/Obsidian",
-    "90_Meta/Obsidian",
+    "90_Meta/Obsidian/筆記反向連結.md",
+    "90_Meta/Obsidian/Obsidian 介紹.md",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-14 at 9.36.51 PM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-14 at 9.35.31 PM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-11 at 9.38.23 PM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-11 at 9.20.25 PM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-11 at 9.14.01 PM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-11 at 9.09.51 PM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-11 at 4.30.29 PM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-11 at 10.58.29 AM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-11 at 10.45.54 AM.png",
+    "90_Meta/Assets/筆記圖片/Screenshot 2023-08-10 at 1.40.01 PM.png",
     "90_Meta/Assets/筆記圖片",
+    "90_Meta/Assets/免費圖片、圖案網頁.md",
     "90_Meta/Assets",
-    "90_Meta"
+    "80_Personal/Health/健身菜單.md",
+    "80_Personal/Health",
+    "80_Personal/Career/轉職講座.md",
+    "80_Personal/Career",
+    "30_Projects/Yacht_Website/遊艇.md",
+    "30_Projects/Yacht_Website",
+    "20_Topics/Investing/技術分析與交易心理學.md",
+    "20_Topics/Investing/chp3 市場結構.md",
+    "20_Topics/Investing/chp2 流動性.md",
+    "20_Topics/Investing/chp1 聰明錢.md",
+    "20_Topics/Economic"
   ]
 }
