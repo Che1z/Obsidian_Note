@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b742e465cdaf2468",
+        "id": "1aaa9a0a4208c670",
         "type": "tabs",
         "children": [
           {
-            "id": "f1e1651b43003c84",
+            "id": "6ed0798c0307637e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -178,10 +178,10 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "f1e1651b43003c84",
+  "active": "6ed0798c0307637e",
   "lastOpenFiles": [
-    "80_Personal/Reading/書籍 - 最有生產力的一年.md",
     "80_Personal/Reading/讀書現況.md",
+    "80_Personal/Reading/書籍 - 最有生產力的一年.md",
     "80_Personal/Reading/書籍  - 我可能錯了.md",
     "80_Personal/Reading/共同問題.md",
     "2025-02-11.md",

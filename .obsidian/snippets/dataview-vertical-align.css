@@ -1,0 +1,26 @@
+/* ================================================= */
+/* ===     完整版 Dataview 表格置中樣式 v2.0     === */
+/* ================================================= */
+
+/* --- Part 1: 標準 Dataview 查詢表格 (例如 "正在閱讀") --- */
+
+/* 
+ * 將所有欄位的標題(th)和內容(td)都垂直與水平置中。
+ * 這會讓「書名」也置中。
+*/
+.dataview.table-view-table th,
+.dataview.table-view-table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* --- Part 2: DataviewJS 生成的表格 (例如 "閱讀統計") --- */
+
+/* 
+ * 將 DataviewJS 表格的標題和內容都水平置中。
+ * 使用 !important 來強制覆蓋主題預設的數字靠右對齊樣式。
+*/
+.dataview.js-view-container table th,
+.dataview.js-view-container table td {
+  text-align: center !important;
+}
