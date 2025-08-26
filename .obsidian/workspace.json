@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1aaa9a0a4208c670",
+        "id": "d3708aafa6be1b18",
         "type": "tabs",
         "children": [
           {
-            "id": "6ed0798c0307637e",
+            "id": "22802d127c0b0ec1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -178,14 +178,14 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "6ed0798c0307637e",
+  "active": "22802d127c0b0ec1",
   "lastOpenFiles": [
-    "80_Personal/Reading/讀書現況.md",
     "80_Personal/Reading/書籍 - 最有生產力的一年.md",
     "80_Personal/Reading/書籍  - 我可能錯了.md",
+    "80_Personal/Reading/讀書現況.md",
     "80_Personal/Reading/共同問題.md",
-    "2025-02-11.md",
     "80_Personal/Reading/三重點法則.md",
+    "2025-02-11.md",
     "10_Computer_Science/Software_Engineering/Code_Review/Checklist.md",
     "10_Computer_Science/Software_Engineering/Code_Review/Code Review 心得.md",
     "30_Projects/AtheNAC/AtheNAC 架構/Guest Web.md",
