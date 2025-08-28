@@ -9,7 +9,7 @@ status: reading
 startDate: 2025-08-27
 finishDate:
 totalPages: 952
-currentPage: 51
+currentPage: 60
 rating:
 ---
 

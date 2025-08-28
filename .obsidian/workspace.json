@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80_Personal/Reading/讀書現況.md",
+                "file": "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "讀書現況"
+              "title": "書籍 - Code Complete 2nd Edition：軟體開發實務指南"
             }
           }
         ],
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80_Personal/Reading/讀書現況.md",
+                "file": "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "讀書現況 的大綱"
+              "title": "書籍 - Code Complete 2nd Edition：軟體開發實務指南 的大綱"
             }
           },
           {
@@ -195,15 +195,15 @@
   },
   "active": "17055c1465246a7a",
   "lastOpenFiles": [
+    "80_Personal/Reading/讀書現況.md",
     "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
+    "80_Personal/Reading/圖書館/程式設計",
     "80_Personal/Reading/書籍 - 沉思錄.md",
     "80_Personal/Reading/書籍 - 最有生產力的一年.md",
     "80_Personal/Reading/書籍  - 我可能錯了.md",
     "2025-02-11.md",
-    "80_Personal/Reading/讀書現況.md",
     "80_Personal/Reading/圖書館/書籍  - 我可能錯了.md",
     "10_Computer_Science/CS_Fundamentals/非冪等(non-idempotent).md",
-    "80_Personal/Reading/圖書館/程式設計",
     "80_Personal/Reading/圖書館/未命名.md",
     "10_Computer_Science/CS_Fundamentals/時間複雜度.md",
     "10_Computer_Science/CS_Fundamentals/Cache.md",
@@ -226,7 +226,6 @@
     "90_Meta/Scratchpad/未命名 2.canvas",
     "90_Meta/Scratchpad/未命名 3.canvas",
     "90_Meta/Assets/筆記圖片/Pasted image 20230806202253.png",
-    "90_Meta/Assets/免費圖片、圖案網頁.md",
     "80_Personal/Reading/圖書館",
     "10_Computer_Science/Software_Engineering/Code_Review",
     "10_Computer_Science/Software_Engineering",
