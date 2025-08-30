@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "b2548268f613161b",
+        "id": "52e32e1279c09f80",
         "type": "tabs",
         "children": [
           {
-            "id": "9626180175077edd",
+            "id": "0922b1450423bec5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80_Personal/Reading/圖書館/書籍  - 我可能錯了.md",
+                "file": "80_Personal/Reading/讀書現況.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "書籍  - 我可能錯了"
-            }
-          },
-          {
-            "id": "17055c1465246a7a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "書籍 - Code Complete 2nd Edition：軟體開發實務指南"
+              "title": "讀書現況"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -68,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "review",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -76,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "搜尋"
+              "title": "Search"
             }
           },
           {
@@ -155,23 +140,23 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
+                "file": "80_Personal/Reading/讀書現況.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "書籍 - Code Complete 2nd Edition：軟體開發實務指南 的大綱"
+              "title": "讀書現況 的大綱"
             }
           },
           {
-            "id": "1800133f9e81071f",
+            "id": "243beeea0593c581",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-file",
+              "title": "外掛程式已不復活躍"
             }
           }
         ]
@@ -193,56 +178,46 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "17055c1465246a7a",
+  "active": "0922b1450423bec5",
   "lastOpenFiles": [
     "80_Personal/Reading/讀書現況.md",
-    "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
-    "80_Personal/Reading/圖書館/程式設計",
-    "80_Personal/Reading/書籍 - 沉思錄.md",
-    "80_Personal/Reading/書籍 - 最有生產力的一年.md",
-    "80_Personal/Reading/書籍  - 我可能錯了.md",
-    "2025-02-11.md",
+    "80_Personal/Reading/共同問題.md",
     "80_Personal/Reading/圖書館/書籍  - 我可能錯了.md",
-    "10_Computer_Science/CS_Fundamentals/非冪等(non-idempotent).md",
-    "80_Personal/Reading/圖書館/未命名.md",
-    "10_Computer_Science/CS_Fundamentals/時間複雜度.md",
-    "10_Computer_Science/CS_Fundamentals/Cache.md",
-    "10_Computer_Science/CS_Fundamentals/瀏覽器.md",
-    "10_Computer_Science/CS_Fundamentals/超文本.md",
-    "10_Computer_Science/CS_Fundamentals/JSON.md",
-    "10_Computer_Science/CS_Fundamentals/Server.md",
-    "10_Computer_Science/CS_Fundamentals/ViewState.md",
-    "10_Computer_Science/CS_Fundamentals/DNS.md",
-    "10_Computer_Science/CS_Fundamentals/EagerSingleton.md",
-    "20_Topics/Investing/Q&A.md",
-    "20_Topics/Investing/技術分析與交易心理學.md",
-    "20_Topics/Crypto/Order type (訂單類型）.md",
-    "30_Projects/Yacht_Website/遊艇.md",
-    "目錄.md",
-    "物件導向 (OOP).md",
-    "90_Meta/Self-Learning/自學.md",
-    "90_Meta/Scratchpad/未命名.canvas",
-    "90_Meta/Scratchpad/未命名 1.canvas",
-    "90_Meta/Scratchpad/未命名 2.canvas",
-    "90_Meta/Scratchpad/未命名 3.canvas",
-    "90_Meta/Assets/筆記圖片/Pasted image 20230806202253.png",
+    "80_Personal/Reading/圖書館/書籍 - 沉思錄.md",
+    "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
+    "80_Personal/Reading/圖書館/書籍 - 最有生產力的一年.md",
+    "10_Computer_Science/Backend/C#/dll.md",
+    "80_Personal/Reading/圖書館/程式設計",
     "80_Personal/Reading/圖書館",
+    "10_Computer_Science/Software_Engineering/Code_Review/Code Review 心得.md",
+    "10_Computer_Science/Software_Engineering/Code_Review/Checklist.md",
     "10_Computer_Science/Software_Engineering/Code_Review",
     "10_Computer_Science/Software_Engineering",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143213.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143157.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143146.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143037.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029143024.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029134445.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029134434.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029134358.png",
-    "90_Meta/Assets/筆記圖片/Pasted image 20241029134331.png",
+    "10_Computer_Science/Backend/C#/語法糖/property.md",
+    "10_Computer_Science/Backend/C#/語法糖/nameof.md",
+    "10_Computer_Science/Backend/C#/語法糖/as operator.md",
+    "10_Computer_Science/Backend/C#/語法糖/String interpolation.md",
+    "10_Computer_Science/Backend/C#/語法糖/Index from end operator.md",
+    "10_Computer_Science/Backend/C#/語法糖/Constructor - this.md",
     "10_Computer_Science/Backend/C#/語法糖",
-    "90_Meta/Self-Learning",
-    "90_Meta/Scratchpad",
-    "90_Meta/Obsidian/Obsidian",
-    "90_Meta/Obsidian",
-    "90_Meta/Assets/筆記圖片"
+    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/多維Array.md",
+    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/一維Array.md",
+    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/static靜態.md",
+    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/readonly.md",
+    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/out keyword.md",
+    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/const.md",
+    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/class.md",
+    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/Constructor.md",
+    "10_Computer_Science/Backend/C#/iQueryable.md",
+    "10_Computer_Science/Backend/C#/Constructor - this.md",
+    "10_Computer_Science/Backend/C#/Constructor.md",
+    "10_Computer_Science/Backend/後端",
+    "80_Personal/Career",
+    "10_Computer_Science/CS_Fundamentals/DataStructure",
+    "10_Computer_Science/CS_Fundamentals/CS50",
+    "網路相關知識",
+    "圖片/Pasted image 20250602165351.png",
+    "圖片/Pasted image 20250606162156.png",
+    "圖片/Pasted image 20250606162031.png"
   ]
 }
