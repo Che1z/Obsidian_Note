@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "52e32e1279c09f80",
+        "id": "ff87607f48b5c0b1",
         "type": "tabs",
         "children": [
           {
-            "id": "0922b1450423bec5",
+            "id": "3542f508d7ebe5cd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "80_Personal/Reading/讀書現況.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "讀書現況"
+              "title": "新分頁"
             }
           }
         ]
@@ -140,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80_Personal/Reading/讀書現況.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "讀書現況 的大綱"
+              "title": "大綱"
             }
           },
           {
@@ -178,44 +173,44 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "0922b1450423bec5",
+  "active": "3542f508d7ebe5cd",
   "lastOpenFiles": [
+    "10_Computer_Science/CS_Fundamentals/資料結構/Sorting/Radix Sort.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Sorting/Linear Sort.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Sorting/Counting Sort.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Sorting/Bucket Sort.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Sorting",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Searching/Search (Linear , Binary).md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Searching/Linear Search.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Searching/Binary Search.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Searching",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/Singly Linked List.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Data Structure MOC.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linear Sort.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/head.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Array vs Linked List.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/指標 (pointer).md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/length.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/Array vs Linked List.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/Circular Linked List.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/Doubly Linked List.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/Linked List MOC.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List/Linked List.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List MOC.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linked List 總複習.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Linear Search.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/線性結構.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/指標 (pointer).md",
     "80_Personal/Reading/讀書現況.md",
-    "80_Personal/Reading/共同問題.md",
-    "80_Personal/Reading/圖書館/書籍  - 我可能錯了.md",
-    "80_Personal/Reading/圖書館/書籍 - 沉思錄.md",
-    "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
-    "80_Personal/Reading/圖書館/書籍 - 最有生產力的一年.md",
-    "10_Computer_Science/Backend/C#/dll.md",
     "80_Personal/Reading/圖書館/程式設計",
     "80_Personal/Reading/圖書館",
-    "10_Computer_Science/Software_Engineering/Code_Review/Code Review 心得.md",
-    "10_Computer_Science/Software_Engineering/Code_Review/Checklist.md",
     "10_Computer_Science/Software_Engineering/Code_Review",
     "10_Computer_Science/Software_Engineering",
-    "10_Computer_Science/Backend/C#/語法糖/property.md",
-    "10_Computer_Science/Backend/C#/語法糖/nameof.md",
-    "10_Computer_Science/Backend/C#/語法糖/as operator.md",
-    "10_Computer_Science/Backend/C#/語法糖/String interpolation.md",
-    "10_Computer_Science/Backend/C#/語法糖/Index from end operator.md",
-    "10_Computer_Science/Backend/C#/語法糖/Constructor - this.md",
     "10_Computer_Science/Backend/C#/語法糖",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/多維Array.md",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/一維Array.md",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/static靜態.md",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/readonly.md",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/out keyword.md",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/const.md",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/class.md",
-    "10_Computer_Science/Backend/C#/基礎概念 (Fundamentals)/Constructor.md",
-    "10_Computer_Science/Backend/C#/iQueryable.md",
-    "10_Computer_Science/Backend/C#/Constructor - this.md",
-    "10_Computer_Science/Backend/C#/Constructor.md",
     "10_Computer_Science/Backend/後端",
     "80_Personal/Career",
     "10_Computer_Science/CS_Fundamentals/DataStructure",
-    "10_Computer_Science/CS_Fundamentals/CS50",
-    "網路相關知識",
     "圖片/Pasted image 20250602165351.png",
     "圖片/Pasted image 20250606162156.png",
     "圖片/Pasted image 20250606162031.png"
