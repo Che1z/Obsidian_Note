@@ -6,6 +6,7 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiAlertCircle",
       "LiComputer",
       "LiWifi",
       "LiComponent"
@@ -32,5 +33,6 @@
     "debugMode": false,
     "useInternalPlugins": true
   },
-  "10_Computer_Science": "LiComputer"
+  "10_Computer_Science": "LiComputer",
+  "To-Do.md": "LiAlertCircle"
 }
