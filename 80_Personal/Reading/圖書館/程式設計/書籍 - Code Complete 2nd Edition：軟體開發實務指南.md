@@ -35,3 +35,6 @@ rating:
 
 ## Part III : Variables
 ### Chp 10: General Issuses
+### Chp 11: Naming
+### Chp 14: Organizing straight-line code
+### Chp 15: Using Conditional
