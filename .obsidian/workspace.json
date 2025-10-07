@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c05023a482798d7c",
+        "id": "f869e542ba871a4a",
         "type": "tabs",
         "children": [
           {
-            "id": "d1a2554130b165d5",
+            "id": "fe5b83c32cf06e41",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
+                "file": "10_Computer_Science/Networking/網路相關知識/NAT (Network Address Translation)/NAT翻譯方式.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "書籍 - Code Complete 2nd Edition：軟體開發實務指南"
+              "title": "NAT翻譯方式"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "code complete",
+                "query": "網路知識",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "書籤"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -141,23 +140,23 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
+                "file": "10_Computer_Science/Networking/網路相關知識/NAT (Network Address Translation)/NAT翻譯方式.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "書籍 - Code Complete 2nd Edition：軟體開發實務指南 的大綱"
+              "title": "NAT翻譯方式 的大綱"
             }
           },
           {
-            "id": "243beeea0593c581",
+            "id": "1800133f9e81071f",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "外掛程式已不復活躍"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
@@ -179,35 +178,37 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "d1a2554130b165d5",
+  "active": "fe5b83c32cf06e41",
   "lastOpenFiles": [
-    "10_Computer_Science/Networking/DHCP_DORA.md",
-    "10_Computer_Science/Networking/網路概論/8 - Network Service/DHCP.md",
-    "目錄.md",
-    "10_Computer_Science/Software_Engineering/Code_Review/Code Review 心得.md",
-    "10_Computer_Science/Software_Engineering/Code_Review/Checklist.md",
-    "10_Computer_Science/Networking/網路概論/內部影片.md",
+    "10_Computer_Science/Networking/網路相關知識/NAT (Network Address Translation)/NAT簡介.md",
+    "10_Computer_Science/Networking/網路相關知識/NAT (Network Address Translation)/NAT翻譯方式.md",
+    "10_Computer_Science/Networking/網路相關知識/NAT (Network Address Translation)",
+    "10_Computer_Science/Networking/網路相關知識/CIDR.md",
+    "10_Computer_Science/Networking/網路相關知識/MIB and SNMP.md",
+    "10_Computer_Science/Networking/網路相關知識/MAC 位址.md",
+    "10_Computer_Science/Networking/網路相關知識/IP 衝突 (IP Conflict).md",
+    "10_Computer_Science/Networking/網路相關知識/ARP and GARP.md",
+    "10_Computer_Science/Networking/網路相關知識/ARP 快取表 (ARP Cache).md",
+    "10_Computer_Science/Networking/網路相關知識/廣播 (Broadcast).md",
+    "10_Computer_Science/Networking/網路相關知識/網路知識大綱.md",
+    "80_Personal/Reading/圖書館/程式設計/書籍 - Code Complete 2nd Edition：軟體開發實務指南.md",
     "To-Do.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Binary Tree.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Trie.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/B-Tree.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Red-Black Tree.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/AVL Tree.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Binary Search Tree.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Binary Tree.md",
+    "10_Computer_Science/Networking/DHCP_DORA.md",
+    "80_Personal/Reading/圖書館/書籍 - 沉思錄.md",
     "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Tree.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Trie.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Red-Black Tree.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Binary Tree.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/Binary Search Tree.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/B-Tree.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Tree/AVL Tree.md",
     "10_Computer_Science/CS_Fundamentals/資料結構/Tree",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Tree.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Trie.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Red-Black Tree.md",
     "10_Computer_Science/CS_Fundamentals/資料結構/STACK.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/線性結構.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Data Structure MOC.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Graph.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/B-Tree.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/AVL Tree.md",
-    "10_Computer_Science/CS_Fundamentals/資料結構/Binary Search Tree.md",
     "10_Computer_Science/CS_Fundamentals/資料結構/QUEUE.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Graph.md",
+    "10_Computer_Science/CS_Fundamentals/Python/Python執行流程.md",
+    "10_Computer_Science/CS_Fundamentals/Python",
+    "30_Projects/AtheNAC/AtheNAC 架構/匯入 Switch MIB.md",
     "10_Computer_Science/CS_Fundamentals/資料結構/Sorting",
     "10_Computer_Science/CS_Fundamentals/資料結構/Searching",
     "80_Personal/Reading/圖書館/程式設計",
@@ -219,8 +220,15 @@
     "80_Personal/Reading/圖書館",
     "10_Computer_Science/Software_Engineering/Code_Review",
     "10_Computer_Science/Software_Engineering",
-    "10_Computer_Science/Backend/C#/語法糖",
-    "90_Meta/Self-Learning",
-    "90_Meta/Scratchpad"
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029143213.png",
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029143157.png",
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029143146.png",
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029143037.png",
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029143024.png",
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029134445.png",
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029134434.png",
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029134358.png",
+    "90_Meta/Assets/筆記圖片/Pasted image 20241029134331.png",
+    "10_Computer_Science/Backend/C#/語法糖"
   ]
 }
