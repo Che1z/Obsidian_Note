@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "80_Personal/Reading/讀書現況.md",
+                "file": "30_Projects/AtheNAC/AtheNAC 架構/IPC SignalR.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "讀書現況"
+              "title": "IPC SignalR"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "網路知識",
+                "query": "path:",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "80_Personal/Reading/讀書現況.md",
+                "file": "30_Projects/AtheNAC/AtheNAC 架構/IPC SignalR.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "讀書現況 的大綱"
+              "title": "IPC SignalR 的大綱"
             }
           },
           {
@@ -180,11 +180,10 @@
   },
   "active": "fe5b83c32cf06e41",
   "lastOpenFiles": [
-    "80_Personal/Reading/圖書館/投資/書籍 - 彼得林區 學以致富.md",
-    "80_Personal/Reading/圖書館/書籍  - 我可能錯了.md",
-    "80_Personal/Reading/讀書現況.md",
-    "80_Personal/Reading/圖書館/投資",
     "10_Computer_Science/Networking/網路相關知識/NAT (Network Address Translation)/NAT翻譯方式.md",
+    "30_Projects/AtheNAC/AtheNAC 架構/IPC SignalR.md",
+    "80_Personal/Reading/圖書館/投資/書籍 - 彼得林區 學以致富.md",
+    "80_Personal/Reading/圖書館/投資",
     "10_Computer_Science/Networking/網路相關知識/NAT (Network Address Translation)/NAT簡介.md",
     "10_Computer_Science/Networking/網路相關知識/NAT (Network Address Translation)",
     "10_Computer_Science/Networking/網路相關知識/CIDR.md",
@@ -208,6 +207,8 @@
     "10_Computer_Science/CS_Fundamentals/資料結構/Tree/AVL Tree.md",
     "10_Computer_Science/CS_Fundamentals/資料結構/Tree",
     "10_Computer_Science/CS_Fundamentals/資料結構/STACK.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/QUEUE.md",
+    "10_Computer_Science/CS_Fundamentals/資料結構/Graph.md",
     "10_Computer_Science/CS_Fundamentals/Python",
     "10_Computer_Science/CS_Fundamentals/資料結構/Sorting",
     "10_Computer_Science/CS_Fundamentals/資料結構/Searching",
