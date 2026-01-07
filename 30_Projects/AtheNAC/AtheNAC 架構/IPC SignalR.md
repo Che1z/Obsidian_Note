@@ -6,11 +6,11 @@
 
 ## 1. 系統元件概覽
 
-| 元件 | 位置 | 角色 |
-| :--- | :--- | :--- |
-| **CoreServiceWorker** | Server 端 | 中央管理服務 |
-| **ProbeDaemonWorker** | Probe 硬體 | 本機代理/中繼站 |
-| **ProbePortWorker** | Probe 硬體 (可能為 Container) | 實際執行 NAC 任務 |
+| 元件                    | 位置                       | 角色          |
+| :-------------------- | :----------------------- | :---------- |
+| **CoreServiceWorker** | Server 端                 | 中央管理服務      |
+| **ProbeDaemonWorker** | Probe 硬體                 | 本機代理/中繼站    |
+| **ProbePortWorker**   | Probe 硬體 (可能為 Container) | 實際執行 NAC 任務 |
 
 ---
 
