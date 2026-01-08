@@ -4,211 +4,133 @@
 
 ---
 
-## 1. 系統元件概覽
+to-do
 
-| 元件                    | 位置                       | 角色          |
-| :-------------------- | :----------------------- | :---------- |
-| **CoreServiceWorker** | Server 端                 | 中央管理服務      |
-| **ProbeDaemonWorker** | Probe 硬體                 | 本機代理/中繼站    |
-| **ProbePortWorker**   | Probe 硬體 (可能為 Container) | 實際執行 NAC 任務 |
+1. CoreServiceWorker 沒有作為 Hub 回傳
+2. ProbePortWorker 直接和 18000 Port 建立 SignalR 通訊
+3. DaemonWorker 不需要透過 Proxy 和 CoreServiceWorker 溝通
 
----
+# ProbeDaemonWorker ↔ CoreServiceWorker SignalR 連線
 
-## 2. 通訊架構總覽
+## 連線端點
 
-```
-┌─ 同一台 Probe 機器 ─────────────────────────────────────────┐
-│                                                            │
-│  PortWorker ──Unix Socket──> ProbeDaemon ── SignalR ───────┼─> CoreService
-│     │                            │                         │      (遠端)
-│     │                            │                         │
-│   無網路                      需要網路                       │
-│   存取權                      (outbound)                    │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-          │
-          │ 這台機器的網卡可能在隔離 VLAN
-          │ PortWorker 和 Daemon 的通訊
-          │ 不經過網路，只經過本機檔案
-```
+| 元件   | 檔案                                                       | 端點                                           |
+| ------ | ---------------------------------------------------------- | ---------------------------------------------- |
+| Client | `PIXIS.ProbeDaemonWorker/SignalR/CoreServiceConnection.cs` | `https://{ServerEndPoint}/ProbeDaemon/connect` |
+| Server | `PIXIS.CoreServiceWorker/SignalR/ProbeDaemonHub.cs`        | MapHub at `/ProbeDaemon/connect`               |
 
-## 3. MessageSender.cs 的兩種通訊方式
+## 連線設定 (Client 端)
 
-`PIXIS.ProbePortWorker.Service.MessageSender` 提供兩種通訊管道：
-
-### 3.1 SignalR 路徑 (ProxyToCoreService)
-
-``` txt
-ProbePortWorker
-      │
-      │ MessageSender.Send()
-      │ 呼叫 ProbeDaemonConnection.ProxyToCoreService()
-      ▼
-┌─────────────────────────────────────────────────────────────┐
-│ DaemonSocketProxyServer (YARP)                              │
-│ 監聽 localhost:TCP → 轉發到 Unix Domain Socket               │
-└─────────────────────────────────────────────────────────────┘
-      │
-      │ Unix Domain Socket (/var/run/pixis/*.sock)
-      ▼
-ProbeDaemonWorker (PortWorkerHub.ProxyToCoreService)
-      │
-      │ CoreServiceConnection.ProxyPortWorkerMessage()
-      │ SignalR WebSocket
-      ▼
-CoreServiceWorker (ProbeDaemonHub.ProxyPortWorkerMessage)
-```
-**特點：**
-
-- 所有連線皆為 Outbound
-    
-- PortWorker 不需對外開放 Port
-    
-- 透過 Daemon 中繼，具備離線暫存能力
-
-### 3.2 HTTP 路徑 (PostToServer / PostAsContentAsync)
-
-
-```txt
-ProbePortWorker
-      │
-      │ MessageSender.PostToServer()
-      │ 直接 HTTP 請求
-      ▼
-	CoreServiceWorker (/PortWorkerReport)
-```
-**特點：**
-
-- 直接 HTTP 連線到 Server
-    
-- 有同步回應 (ResultMessage)
-    
-- 需要 PortWorker 有對外網路存取能力
-    
-
----
-
-## 4. ProbeDaemon 的角色 - 智慧代理
-
-ProbeDaemon 不只是透明代理，還具備額外功能：
-
-| **功能**     | **說明**                               |
-| ---------- | ------------------------------------ |
-| **訊息轉發**   | 將 PortWorker 訊息轉發到 CoreService       |
-| **附加識別資訊** | 從 PortNumber 查詢並附加 PixisProbeId      |
-| **離線暫存**   | CoreService 斷線時，暫存 DHCP 相關事件到 LiteDB |
-| **連線狀態管理** | 只有連線時才轉發，否則做離線處理                     |
-### 離線處理邏輯 (PortWorkerHub.cs)
-``` c#
-if (csConnection.State == HubConnectionState.Connected)
-{
-    await csConnection.ProxyPortWorkerMessage(pixisProbeId, evt);
-}
-else
-{
-    // 特定事件暫存到本地 LiteDB
-    switch (evt.ActionCode)
+```csharp
+this.connection = new HubConnectionBuilder()
+    .WithUrl($"https://{daemonStatus.ServerEndPoint}/ProbeDaemon/connect", opt =>
     {
-        case ActionCode.AssignDhcpV4IP:
-        case ActionCode.AssignDhcpV6IP:
-        case ActionCode.ReleaseDhcp:
-            localDBService.StorePortWorkerEvent(pixisProbeId, ...);
-            break;
-    }
-}
+        opt.Headers.Add("X-ProbeDaemon-ID", daemonStatus.ProbeDaemonId.ToString());
+        opt.SkipNegotiation = true;
+        opt.Transports = HttpTransportType.WebSockets;
+    })
+    .WithAutomaticReconnect([TimeSpan.Zero])
+    .Build();
 ```
 
-## 5. Unix Domain Socket 機制
+## 雙向通訊方法
 
-### 5.1 什麼是 Unix Domain Socket？
+| 方向                     | 介面                          | 方法                                                                                                                                                |
+| ------------------------ | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Daemon → CoreService** | `IDaemonToCoreServiceRequest` | `ProbeDaemonLogin()`, `GetPortWorkerInitData()`, `GetProbeHAGroupInfo()`, `ReportDaemonState()`, `ProxyPortWorkerMessage()`, `GetX509Certificate()` |
+| **CoreService → Daemon** | `ICoreServiceToDaemonRequest` | `StartPortWorker()`, `UpdateDaemonLogRetentionDays()`, `NotifyHttpsCertificateChanged()`                                                            |
 
-Unix Domain Socket 是**本機檔案系統上的 IPC (Inter-Process Communication) 機制**，不經過網路協定棧。
+## 認證機制
 
-| **特性** | **說明**              |
-| ------ | ------------------- |
-| 通訊媒介   | 檔案系統中的 socket 檔案    |
-| 網路需求   | **不需要網路**，純本機通訊     |
-| 存取控制   | 檔案系統權限 (rwx)        |
-| 效能     | 比 TCP localhost 更高效 |
+- **Header**: `X-ProbeDaemon-ID`
+``` C#
+opt.Headers.Add("X-ProbeDaemon-ID", daemonStatus.ProbeDaemonId.ToString());
+```
+- **Policy**: `ProbeDaemonIdRequirement`
+- **UserIdProvider**: `DaemonIdProvider`  從 Header 提取 ID
 
-### 5.2 架構中的實作
+## 架構圖
 
-**ProbeDaemonWorker 監聽 Socket：**
+```mermaid
+graph LR
+    subgraph ProbeDaemonWorker
+        Client["CoreServiceConnection"]
+        ImplClient["實作: ICoreServiceToDaemonRequest"]
+    end
 
-```C#
-// Program.cs
-kestrelOption.ListenUnixSocket(socketPath);
-// socketPath = /var/run/pixis/{name}.sock
+    subgraph CoreServiceWorker
+        Server["ProbeDaemonHub"]
+        ImplServer["實作: IDaemonToCoreServiceRequest"]
+        Endpoint["Endpoint: /ProbeDaemon/connect"]
+    end
+
+    Client == "WebSocket/HTTPS" ==> Server
+    Server -. "Server→Client 呼叫" .-> ImplClient
 ```
 
-**ProbePortWorker 透過 YARP 連接：**
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        IProbeDaemonHub                                  │
+│              (PIXIS.Core.Service.Interface - 共用層)                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│ 繼承 Hub<ICoreServiceToDaemonRequest>   實作 IDaemonToCoreServiceRequest │
+│   ┌─────────────────────────────┐           ┌─────────────────────────┐ │
+│   │   Server → Client 方法       │          │   Client → Server 方法   │ │
+│   │   (透過 Clients 屬性呼叫)     │          │   (Hub 的公開方法)        │ │
+│   │                             │           │                         │ │
+│   │ • StartPortWorker()         │           │ • ProbeDaemonLogin()    │ │
+│   │ • UpdateDaemonLogRetention  │           │ • GetPortWorkerInitData │ │
+│   │ • NotifyHttpsCertChanged    │           │ • ReportDaemonState()   │ │
+│   └─────────────────────────────┘          └ ─────────────────────────┘ │
+│                                                                         │
+│                    ↑ 兩者結合 = 完整的雙向通訊 Hub                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ 繼承
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                          ProbeDaemonHub                                 │
+│                  (PIXIS.CoreServiceWorker - Server 層)                  │
+├─────────────────────────────────────────────────────────────────────────┤
+│    override 所有 abstract 方法，提供實際實作                               │
+└─────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ DI 註冊
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                            Startup.cs                                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│  // DI 註冊：IProbeDaemonHub → ProbeDaemonHub                            │
+│  services.AddTransient<IProbeDaemonHub, ProbeDaemonHub>();              │
+│                                                                         │
+│  // 端點註冊：使用 IProbeDaemonHub 類型                                    │
+│  endpoints.MapHub<IProbeDaemonHub>("/ProbeDaemon/connect");             │
+│                              ↓                                          │
+│                     DI 解析為 ProbeDaemonHub                             │
+└─────────────────────────────────────────────────────────────────────────┘
 
-```C#
-// DaemonSocketProxyServer.cs
-var sock = new Socket(AddressFamily.Unix, SocketType.Stream, ProtocolType.Unspecified);
-await sock.ConnectAsync(
-    new UnixDomainSocketEndPoint(configuration.GetPortWorkerSetting().GetFullDaemonSocketName()),
-    ct
-);
 ```
 
-### 5.3 為什麼需要 YARP Proxy？
+## 總結
 
-SignalR Client 不原生支援 Unix Domain Socket，因此使用 YARP 作為本地代理：
+| 元件                            | 職責                    | 位置                         |
+| ----------------------------- | --------------------- | -------------------------- |
+| `ICoreServiceToDaemonRequest` | 定義 Server → Client 方法 | PDI (共用)                   |
+| `IDaemonToCoreServiceRequest` | 定義 Client → Server 方法 | PDI (共用)                   |
+| `IProbeDaemonHub`             | 組合兩個介面成為完整 Hub 契約     | Core.Service (共用)          |
+| `ProbeDaemonHub`              | 實際實作                  | CoreServiceWorker (Server) |
+| `MapHub + AddTransient`       | 註冊端點 + DI 綁定          | Startup.cs                 |
 
-```txt
-SignalR Client → localhost:TCP → YARP Proxy → Unix Socket → Daemon Kestrel
-```
+---
 
-## 6. 現有架構的安全問題
+### 1. `connection.InvokeAsync()` - Client 呼叫 Server
+### 2. `connection.On()` - 註冊處理 Server 呼叫的方法
 
-### 6.1 Legacy HTTP 直連問題
+## 對照表
 
-`PortWorkerRequestService.SendLegacyRequest()` 讓 CoreService 直接 HTTP 連到 PortWorker：
-
-```C#
-IPEndPoint targetEndPoint = GetIpEndPoint(portWorker.CommunicationIP, PixisBindingPort.PortWorkerPort);
-// 直接連到 http://{PortWorker IP}:18001/Command
-```
-
-| **問題**      | **影響**                       |
-| ----------- | ---------------------------- |
-| **攻擊面增加**   | 每個 PortWorker 都暴露 Port 18001 |
-| **防火牆配置複雜** | 需為每個 PortWorker IP 設定入站規則    |
-| **網路隔離破壞**  | Server 需要能路由到每個 PortWorker   |
-| **VLAN 限制** | 隔離 VLAN 中的 PortWorker 無法被連入  |
-
-## 7. 建議改進方向
-
-### 7.1 全面採用 Daemon 代理模式
-
-將所有 CoreService → PortWorker 的通訊都透過 Daemon 中繼：
-```txt
-目前 (Legacy):
-  CoreService ──HTTP──> PortWorker (需開 Port)
-
-建議:
-  CoreService ──SignalR──> Daemon ──Unix Socket──> PortWorker
-                (已建立連線)    (本機通訊)
-```
-
-### 7.2 需要變更的程式碼
-
-1. **移除或重構** `PortWorkerRequestService.SendLegacyRequest()`
-    
-2. **新增** Daemon 到 PortWorker 的反向通訊介面
-    
-3. **更新** `IDaemonToPortWorkerRequest` 加入命令傳遞方法
-
-
-## 附錄：關鍵程式碼位置
-
-|**檔案**|**路徑**|
-|---|---|
-|MessageSender|`PIXIS.ProbePortWorker/Service/MessageSender.cs`|
-|ProbeDaemonConnection|`PIXIS.ProbePortWorker/SignalR/ProbeDaemonConnection.cs`|
-|DaemonSocketProxyServer|`PIXIS.ProbePortWorker/BackgroundWorker/DaemonSocketProxyServer.cs`|
-|PortWorkerHub|`PIXIS.ProbeDaemonWorker/SignalR/PortWorkerHub.cs`|
-|CoreServiceConnection|`PIXIS.ProbeDaemonWorker/SignalR/CoreServiceConnection.cs`|
-|ProbeDaemonHub|`PIXIS.CoreServiceWorker/SignalR/ProbeDaemonHub.cs`|
-|PortWorkerRequestService|`PIXIS.Core.Service/PortWorkerRequestService.cs`|
+|方法|方向|用途|對應介面|
+|---|---|---|---|
+|`connection.InvokeAsync()`|Client → Server|Client 主動呼叫 Server 方法|`IDaemonToCoreServiceRequest`|
+|`connection.On()`|Server → Client|註冊處理 Server 來的呼叫|`ICoreServiceToDaemonRequest`|
