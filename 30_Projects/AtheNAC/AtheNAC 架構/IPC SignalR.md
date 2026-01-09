@@ -134,3 +134,7 @@ graph LR
 |---|---|---|---|
 |`connection.InvokeAsync()`|Client → Server|Client 主動呼叫 Server 方法|`IDaemonToCoreServiceRequest`|
 |`connection.On()`|Server → Client|註冊處理 Server 來的呼叫|`ICoreServiceToDaemonRequest`|
+
+
+
+startup.cs中 要有 addauthorization 新增 policy 給 hub使用
