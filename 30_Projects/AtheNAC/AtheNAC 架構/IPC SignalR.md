@@ -134,3 +134,138 @@ graph LR
 |---|---|---|---|
 |`connection.InvokeAsync()`|Client → Server|Client 主動呼叫 Server 方法|`IDaemonToCoreServiceRequest`|
 |`connection.On()`|Server → Client|註冊處理 Server 來的呼叫|`ICoreServiceToDaemonRequest`|
+
+
+# PortWorker 直連 CoreService 架構重構計畫
+
+## 目標
+
+移除 `ProbeDaemonWorker` 作為 `ProbePortWorker` 與 `CoreServiceWorker` 之間的 SignalR 代理。讓 `ProbePortWorker` 直接連線至 `CoreServiceWorker`，並具備離線生存能力。
+
+## 執行階段 (Phases)
+
+### Phase 0: 直連通道建設 (✅ 已完成)
+
+確保 PortWorker 物理上能連到 CoreService。
+
+- [x]  **建立 CoreService 連線**: `CanConnect` 至 CoreService HTTPS 端口。
+- [x]  **實作登入機制**: 
+    
+    PortWorkerLogin 已實作。
+- [x]  **實作事件回報**: 
+    
+    ReportEvent 已實作。
+- [x]  **接收核心指令**: 
+    
+    OnStartPortWorker 已實作。
+
+### Phase 1: 離線資料骨架 (✅ 已完成)
+
+賦予 PortWorker 記憶能力 (LiteDB)。
+
+- [x]  **LiteDB 初始化**: 修改 
+    
+    Startup.cs，註冊 LiteDB 服務。
+- [x]  **建立 ILocalDBService 介面**: 定義資料存取合約。
+- [x]  **實作 LocalDBService**: 負責 LiteDB 的 CRUD 操作。
+
+### Phase 2: 關鍵資料快取 (⬜ 待執行 - 優先級: 🔴 高)
+
+整合 SignalR，將收到的資料「存起來」。
+
+#### 2.1 實作資料儲存方法
+
+- [ ]  **SavePortWorkerInitData**: 儲存初始化資料 (InitData)。
+- [ ]  **SaveX509Certificate**: 儲存 HTTPS 憑證。
+- [ ]  **StoreOfflineEvent**: 離線事件暫存。
+
+#### 2.2 整合 SignalR - 修改 CoreServiceConnection.cs
+
+- [ ]  **OnStartPortWorker**: 收到指令時，順手備份 InitData。
+- [ ]  **OnNotifyHttpsCertificateChanged**: 收到通知時，順手備份憑證。
+- [ ]  **GetX509Certificate**: 增加離線讀取邏輯 (連不上時讀 DB)。
+
+### Phase 3: 離線生存能力 (⬜ 待執行 - 優先級: 🔴 高)
+
+讓 PortWorker 在沒網路時也能啟動。
+
+#### 3.1 修改 CoreServiceConnection.ConnectAsync
+
+- [ ]  **離線啟動邏輯**: 當 `TryConnectToCoreService` 失敗時，嘗試從 LocalDB 讀取設定與 InitData，並寫入 `initPortWorkerChannel` 觸發啟動 (標記為離線模式)。
+- [ ]  **背景重連**: 啟動後持續在背景嘗試重連 CoreService。
+
+#### 3.2 修改 MainWorker.cs
+
+- [ ]  **處理離線啟動**: 確保 MainWorker 能正確處理 `initLocally=true` 的情況。
+
+### Phase 3.5: 資料同步機制 (⬜ 新增 - 優先級: 🟡 中)
+
+確保快取資料不會過期。
+
+- [ ]  **新增 CacheSyncWorker**: BackgroundService，定期 (如每 10 分鐘) 當連線正常時，從 CoreService 同步最新的 InitData 與 Certificate。
+
+### Phase 4: 事件補償機制 (⬜ 待執行 - 優先級: 🟡 中)
+
+處理斷線期間產生的資料。
+
+- [ ]  **修改 ReportEvent**: 發送失敗或斷線時，自動轉存 LocalDB。
+- [ ]  **新增 OfflineEventUploadWorker**: 連上線後自動掃描 DB 並補傳事件。
+
+### Phase 4.5: CoreService 端改造 (⬜ 新增 - 優先級: 🔴 高)
+
+CoreService 需支援分辨直連與代理連線。
+
+#### 4.5.1 修改 StartPortWorker
+
+- [ ]  **分流邏輯**: 判斷目標 PortWorker 是否在 
+    
+    PortWorkerConnectionManager (直連) 還是僅在 Daemon 下 (代理)。
+- [ ]  **推送指令**: 若直連，使用 
+    
+    PortWorkerHub 推送；若代理，使用 
+    
+    ProbeDaemonHub 推送。
+
+#### 4.5.2 修改 ResetPortWorker
+
+- [ ]  **支援直連重置**: 實作直連模式下的重置指令發送。
+
+#### 4.5.3 憑證更新通知
+
+- [ ]  **全面廣播**: 憑證更新時，需同時通知 DaemonHub 與 PortWorkerHub。
+
+### Phase 5: 連線模式決策機制 (⬜ 新增 - 優先級: 🔴 高)
+
+- [ ]  **自動偵測 (推薦)**: CoreService 依據 
+    
+    PortWorkerConnectionManager 是否有連線來決定傳送路徑。
+
+### Phase 6: 移除舊時代產物 (⬜ 待執行 - 最後步驟)
+
+- [ ]  **PortWorker 端**: 移除 
+    
+    ProbeDaemonConnection.cs。
+- [ ]  **DaemonWorker 端**: 移除 
+    
+    PortWorkerHub 與相關 Proxy 程式碼。
+
+### Phase 7: 測試與驗證 (⬜ 新增 - 優先級: 🟡 中)
+
+- [ ]  **功能測試**: 線上/離線啟動、模式切換。
+- [ ]  **資料驗證**: 快取讀寫正確性。
+- [ ]  **壓力測試**: 斷線重連穩定性。
+
+## 進度追蹤
+
+| 階段                     | 狀態    | 優先級  |
+| ---------------------- | ----- | ---- |
+| Phase 0: 直連通道          | ✅ 完成  | -    |
+| Phase 1: LiteDB 骨架     | ✅ 完成  | -    |
+| Phase 2: 資料快取          | ⬜ 待執行 | 🔴 高 |
+| Phase 3: 離線啟動          | ⬜ 待執行 | 🔴 高 |
+| Phase 3.5: 資料同步        | ⬜ 待執行 | 🟡 中 |
+| Phase 4.5: CoreService | ⬜ 待執行 | 🔴 高 |
+| Phase 5: 連線模式          | ⬜ 待執行 | 🔴 高 |
+| Phase 4: 事件補償          | ⬜ 待執行 | 🟡 中 |
+| Phase 7: 測試驗證          | ⬜ 待執行 | 🟡 中 |
+| Phase 6: 移除舊碼          | ⬜ 待執行 | 🟢 低 |
